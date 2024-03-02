@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../styles/prompt.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="../styles/loder.css">
+
+    </head>
+
+    <body style="background-color: #CCEDFE;">
+        <div id="1" style="display: none;">
+            <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+
+                <div class="wrapper">
+                    <h2>Write Your Query</h2>
+                    <textarea spellcheck="false" placeholder="Type something here..." id="github-url-input" required></textarea>
+                    <div class="d-flex justify-content-end mt-3">
+                        <button class="btn-donate" onclick="bavgit(event)">
+                            Enter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="lod" style=" display: nones; background-color: black;width: 100%; height: 100vh;" id="2">
+            <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+                <div class="loader">
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__ball"></div>
+                </div>
+            </div>
+        </div>
+
+            <script>
+                setTimeout(() => {
+                document.getElementById('1').style.display = 'block';
+                // document.getElementById('1').style.backgroundColor = 'none';
+                document.getElementById('2').style.display = 'none';
+            }, 1000);
+                function loader() {
+                document.getElementById('1').style.display = 'none';
+                document.getElementById('2').style.display = 'block';
+                setTimeout(() => {
+                    window.location.href = 'prompt.html';
+                }, 3000);
+            }
+                const textarea = document.querySelector("textarea");
+                textarea.addEventListener("keyup", e => {
+                    textarea.style.height = "63px";
+                    let scHeight = e.target.scrollHeight;
+                    textarea.style.height = `${scHeight}px`;
+                });
+                </script>
+
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+            <script>
+                const uploadgit = async (githubLink) => {
+            try {
+                const response = await fetch("http://localhost:5000/query", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ query: githubLink })
+                });
+
+                console.log("this is response:  ", response);
+
+                const data = await response.json();
+                console.log("this is data : ", data);
+                document.getElementById("github-url-input").value = "";
+                // window.location.href = "prompt.html";
+            } catch (error) {
+                console.error("Error uploading file:", error);
+            }
+        };
+
+        function bavgit(e) {
+            loader()
+            let githubLinkInput = document.getElementById("github-url-input").value;
+            console.log(githubLinkInput)
+            if (githubLinkInput) {
+                uploadgit(githubLinkInput);
+            }
+        }
+            </script>
+    </body>
+
+</html>

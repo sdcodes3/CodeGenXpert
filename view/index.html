@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../styles/index.css">
+        <link rel="stylesheet" href="../styles/loder.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+
+    </head>
+
+    <body style="background-color: #CCEDFE;">
+
+        <div id="1" style="display: none;">
+            <div class="wrapper" style="background: linear-gradient(#46eac4, #34b4e7);
+            ">
+                <div class="inner" style="border-radius:0.8rem;">
+                    <div class="image-holder"
+                        style="display: flex;justify-content: center;align-items: center;background-color: rgb(212, 250, 254);">
+                        <img src="../img/bgimage.png" alt="">
+                    </div>
+                    <form action="" style="padding: 3rem;border-radius: 4rem;">
+                        <!-- <h3>Registration Form</h3> -->
+                        <div style="border: 2px dashed rgb(194, 194, 194);border-radius: 0.5rem;">
+                            <label class="custum-file-upload shadow" for="file-input">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24">
+                                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill=""
+                                                d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z"
+                                                clip-rule="evenodd" fill-rule="evenodd"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    <span style="font-size: 1rem;">Click to upload image</span>
+                                </div>
+                                <input type="file" id="file-input" onchange="bav(event)" required>
+                            </label>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;margin-top: 1rem;">
+                            <p style="font-size: 1.2rem;font-weight: bold;">OR</p>
+                        </div>
+                        <div style="display: flex;margin-top: 1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 15 15" class="w-5 shadow"
+                                style="width: 40px;border-radius: 1.5rem;margin-right: 0.5rem;">
+                                <path clip-rule="evenodd" fill-rule="evenodd" fill="#000000"
+                                    d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z">
+                                </path>
+                            </svg>
+                            <input type="text" name="text" placeholder="Link.." id="github-url-input" class="input mt-1"
+                                style="font-family: Poppins, sans-serif;">
+                        </div>
+
+                        <!-- <div style="display: flex;justify-content: center; align-items: center;"> -->
+                        <button class="btn-donate" onclick="bavgit(event)">
+                            Enter
+                        </button>
+
+                        <!-- </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="lod" style=" display: nones; background-color: black;width: 100%; height: 100vh;" id="2">
+            <div style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+                <div class="loader">
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__bar"></div>
+                    <div class="loader__ball"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+
+
+
+        <script>
+            setTimeout(() => {
+                document.getElementById('1').style.display = 'block';
+                // document.getElementById('1').style.backgroundColor = 'none';
+                document.getElementById('2').style.display = 'none';
+            }, 1000);
+            function loader() {
+                document.getElementById('1').style.display = 'none';
+                document.getElementById('2').style.display = 'block';
+                setTimeout(() => {
+                    window.location.href = 'prompt.html';
+                }, 800000);
+            }
+            const uploadFile = async (file) => {
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("http://localhost:5000/upload", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const data = await response.json();
+                console.log(data)
+                document.getElementById('file-input').value = '';
+                window.location.href = "prompt.html";
+            } catch (error) {
+                console.error("Error uploading file:", error);
+            }
+        };
+
+        function bav(e) {
+            loader()
+            const fileInput = document.getElementById("file-input").files[0];
+            if (fileInput) {
+                uploadFile(fileInput);
+            }
+        }
+
+        const uploadgit = async (githubLink) => {
+            try {
+                const response = await fetch("http://localhost:5000/download_repo", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ github_link: githubLink })
+                });
+
+                console.log("this is response:  ", response);
+
+                const data = await response.json();
+                console.log("this is data : ", data);
+                document.getElementById("github-url-input").value = "";
+                window.location.href = "prompt.html";
+            } catch (error) {
+                console.error("Error uploading file:", error);
+            }
+        };
+
+        function bavgit(e) {
+            loader()
+            let githubLinkInput = document.getElementById("github-url-input").value;
+            console.log(githubLinkInput)
+            if (githubLinkInput) {
+                uploadgit(githubLinkInput);
+            }
+        }
+        </script>
+
+    </body>
+
+</html>

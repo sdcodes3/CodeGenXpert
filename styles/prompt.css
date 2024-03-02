@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#46eac4, #34b4e7);
+}
+
+::selection {
+    color: #fff;
+    background: #4671EA;
+}
+
+.wrapper {
+    width: 770px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px 25px 30px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.06);
+}
+
+.wrapper h2 {
+    color: #4671EA;
+    font-size: 28px;
+    text-align: center;
+}
+
+.wrapper textarea {
+    width: 100%;
+    resize: none;
+    height: 59px;
+    outline: none;
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    max-height: 330px;
+    caret-color: #4671EA;
+    border: 1px solid #bfbfbf;
+}
+
+textarea::placeholder {
+    color: #b3b3b3;
+}
+
+textarea:is(:focus, :valid) {
+    padding: 14px;
+    border: 2px solid #4671EA;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0px;
+}
+
+.btn-donate {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.6em 1.4em;
+    min-width: 120px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    /* box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35); */
+}
+
+.btn-donate:hover {
+    background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-donate {
+        transition: linear;
+    }
+}
