@@ -267,14 +267,15 @@ def createFile(folder_name, paragraph):
     
 #     store_path = "C:/Users/nayan/Downloads/hackathon"
     # folder_name = "frontEnd"
-    print("Hangigyayayaaya")
     file_extension, create_file, content, file_name = extract_info_from_paragraph(paragraph)
     file_extension2, create_file2, content2 = comparision(paragraph)
     c=list(content)
     c2=list(content2)
     x=len(c)
     y=len(c2)
-    print("Hangigyayayaaya")
+
+    # print(content)
+    # print(content2)
 
     strg=""
     if(x>y):
@@ -294,7 +295,7 @@ def createFile(folder_name, paragraph):
     create_file_in_folder(folder_name, file_extension, strg, create_file, file_name)
     
 
-createFile("upload","""Create a file named bav.html file
+# createFile("upload","""Create a file named bav.html file
     # This is the content of the file.
     # It can contain multiple lines.""")
 if __name__ == '__main__':
